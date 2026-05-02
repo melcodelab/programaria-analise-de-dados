@@ -62,3 +62,19 @@
 - O que são queries?
     - Comando de instrução do SQL
     - Uma pergunta que fazemos ao banco de dados para obter informações especificas ou realizar operações dentro do banco.
+
+--- 
+# **4 - Fazendo consultas em SQL**
+
+![../img/modulo4-3.png](../img/modulo4-3.png)
+
+**JOIN:** Serve para juntar tabelas nos nossos dados, podemos usar ele várias vezes nas nossas consultas, juntando várias tabelas de uma vez. Porém temos que nos atentar sobre quais registros queremos trazer de cada tabela, entendendo bem os tipos de join existentes:
+
+- **INNER JOIN:** Combina linhas com correspondências em ambas as tabelas.
+- **RIGHT JOIN:** Retorna todos os registros da direita e os da esquerda com correspondência.
+- **LEFT JOIN:** Retorna todos os registros da esquerda e os da direita com correspondência.
+- **FULL JOIN:** Retorna todos os registros de ambas as tabelas, com ou sem correspondência.
+
+**GROUP BY:** Serve para agrupa linhas por uma coluna específica, resumindo os dados. Perfeito para contagem, soma e média por grupos.
+
+**ORDER BY:** Ordena os resultados da consulta em ordem crescente ou decrescente. Ideal para visualizar os maiores ou menores valores.

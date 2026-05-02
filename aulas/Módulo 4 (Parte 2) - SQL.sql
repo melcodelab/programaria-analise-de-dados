@@ -1,8 +1,8 @@
 -- criação de tabelas
 CREATE TABLE Municipios_Brasileiros (
-	Cidade NVARCHAR(50) NOT NULL,
-	Estado NVARCHAR(2) NOT NULL,
-	Regiao NVARCHAR(20) NOT NULL,
+	Cidade VARCHAR(50) NOT NULL,
+	Estado VARCHAR(2) NOT NULL,
+	Regiao VARCHAR(20) NOT NULL,
 	Municipio_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
 );
 
@@ -10,22 +10,24 @@ CREATE TABLE Municipio_Status (
 	status_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	populacao_residente INTEGER NOT NULL,
 	IDHM_rank INTEGER NOT NULL,
-	educacao INTEGER NOT NULL,
+	educacao FLOAT NOT NULL,
 	renda FLOAT NOT NULL,
 	municipio_id INTEGER NOT NULL,
 	CONSTRAINT fk_municipio_id FOREIGN KEY (municipio_id) REFERENCES Municipios_Brasileiros(Municipio_ID)
-)
+);
 
 CREATE TABLE Gerencia_Regiao (
-	gerencia_ID INTEGER NOT FULL PRIMARY KEY AUTOINCREMEN,
-	regiao NVARCHAR(50) NOT NULL,
+	gerencia_ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	regiao VARCHAR(50) NOT NULL,
 	pessoas_brancas INTEGER NOT NULL,
 	pessoas_pretas_pardas INTEGER NOT NULL,
-	gerencia_branca INTEGER NOT NULL
-	gerencia_preta_parda INTEGER NOT NULL
+	gerencia_branca INTEGER NOT NULL,
+	gerencia_preta_parda INTEGER NOT NULL,
 	CONSTRAINT fk_regiao FOREIGN KEY (regiao) REFERENCES Municipios_Brasileiros(Regiao)
-)
+);
 
+
+-- Inserção de dados nas tabelas
 -- Inserção de dados nas tabelas
 INSERT INTO Gerencia_Regiao (regiao, 
 pessoas_brancas, 
@@ -5599,9 +5601,7 @@ INSERT INTO Municipios_Brasileiros (Cidade, Estado, Regiao) VALUES
 ('WanderlÃ¢ndia','TO','Norte'),
 ('XambioÃ¡','TO','Norte');
 
-INSERT INTO Municipios_Status (
-    Populacao_Residente, IDHM_rank, Educacao, Renda, Municipio_ID
-) VALUES
+INSERT INTO Municipio_Status (populacao_residente, IDHM_rank, educacao, renda, municipio_id) VALUES
     (2538, 4079, 0.466, 0.584, 1),
     (6072, 4448, 0.456, 0.578, 2),
     (21398, 3832, 0.485, 0.619, 3),
@@ -11171,9 +11171,3 @@ UPDATE  Municipios_Brasileiros SET pais='Brasil';
 
 -- Exlcluindo a coluna
 ALTER TABLE Municipios_Brasileiros DROP COLUMN pais;
-
--- consultando os dados utilizando o select
-SELECT regiao FROM Municipios_Brasileiros;
-SELECT * FROM Municipios_Brasileiros WHERE Cidade = 'Itaquaquecetuba';
-SELECT * FROM Municipios_Brasileiros WHERE Cidade like 'Itaqua%';
-SELECT * FROM Municipio_Status WHERE populacao_residente > 50000;
