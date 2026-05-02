@@ -25,7 +25,7 @@
     - A forma como as tabelas se conectam e "conversam" em um banco de dados.
 - Tipos de relacionamentos:
     
-![img/Captura de Tela 2026-04-30 às 22.13.32.png]()
+![../img/modulo4-1.png](../img/modulo4-1.png)
     
 - **1 para 1 (1:1):** Cada uma das duas entidades envolvidas referenciam obrigatoriamente apenas uma unidade da outra.
     - Ex: Cada pessoa tem apenas uma carteira de identidade.
@@ -34,7 +34,7 @@
 - **Muitos para muitos (N:N):** Neste tipo de relacionamento cada entidade, de ambos os lados, podem referenciar múltiplas unidades da outra
     - Ex: Um cliente pode comprar vários álbuns, e um álbum pode ser comprado por vários clientes.
     
-![img/Captura de Tela 2026-04-30 às 22.11.33.png]()
+![../img/modulo4-2.png](../img/modulo4-2.png)
     
 - O que são diagramas de entidade e relacionamento?
     - É uma representação gráfica das relações entre as tabelas, facilita muito a compreender o que tem no banco e como essas entidades estão se relacionando.
